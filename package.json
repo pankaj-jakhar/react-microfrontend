@@ -1,0 +1,23 @@
+{
+  "name": "react-microfrontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "run-s start:micro-host start:micro-client start:container",
+    "start:micro-host": "cd ./micro-host &&  ttab -t 'micro-host' npm start",
+    "start:micro-client": "cd ./micro-client &&  ttab -t 'micro-client' npm start",
+    "start:container": "cd ./container &&  ttab -t 'container' npm start",
+    "postinstall": "npm run install:micro-host & npm run install:micro-client & npm run install:container",
+    "install:micro-host": "cd ./micro-host && npm install",
+    "install:micro-client": "cd ./micro-client && npm install",
+    "install:container": "cd ./container && npm install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "npm-run-all": "^4.1.5",
+    "ttab": "^0.8.0"
+  }
+}
